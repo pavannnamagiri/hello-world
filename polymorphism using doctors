@@ -1,0 +1,47 @@
+
+public class docs {
+	protected  String name;
+    protected String desg;
+    public docs(String name, String desg){
+    	this.name = name;
+    	this.desg = desg;
+    	
+    }
+    public void print(){
+    	System.out.println(name);
+    	System.out.println(desg);
+    }
+    public static void main(String[] args) {
+    	doctors d=new doctors("Dr Nam", "Ped", 5); 
+    	d.print();
+    	surgeons c=new surgeons("Dr Sam", "Cardiac", 6);
+    	c.print();
+    	
+    }
+}
+    
+    class doctors extends docs{
+    	protected int visits;
+    	public doctors(String name,String desg,int visits){
+    		super(name, desg);
+    		this.visits=visits;
+    	}
+    	@Override
+    	public void print(){
+    		super.print();
+    		System.out.println(visits);
+    	}
+    }
+class surgeons extends docs{
+	protected int nsurg;
+	public surgeons(String name,String desg,int nsurg){
+		super(name,desg);
+		this.nsurg=nsurg;
+		
+	}
+	@Override
+	public void print(){
+		super.print();
+		System.out.println(nsurg);
+	}
+}
